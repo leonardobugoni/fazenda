@@ -38,7 +38,7 @@
 
 <html>
     <head>      
-        <title>Cadastro Pessoa</title>
+        <title>Cadastro Pessoas</title>
     </head>
     <body>
         <h1>Cadastro de Pessoas</h1>    
