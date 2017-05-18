@@ -51,7 +51,7 @@
                     <p><label for="sobrenome">Sobrenome</label>
                         <input value="<?php echo @$dados['sobrenome'] ?>" type="text" name="sobrenome" required=" " id="sobrenome" autocomplete="off">                            
                     </p>
-                    <p><label for="data"> Nascimento</label>
+                    <p><label for="data"> Nascimentos</label>
                         <input value="<?php echo @$dados['data'] ?>" type="date" name="data" required=" " id="data" autocomplete="off">
                     </p>
                     <input type="submit" value="Salvar"> 
@@ -59,7 +59,7 @@
                 </form>       
         </div>    
         <div class="pessoa">
-            <h2> Pessoas Cadastradas </h2>            
+            <h2> Pessoas Cadastradas 2017</h2>            
             <?php
                     foreach ($result as $linha){
                         echo "---------------------------------------------------------------------------- <br>";                            
