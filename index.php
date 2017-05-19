@@ -37,7 +37,7 @@
 
 <html>
     <head>      
-        <title>Cadastro Pessoas SAYLON MACHÃO</title>
+        <title>Cadastro Pessoas</title>
     </head>
     <body>
         <h1>Cadastro de Pessoas</h1>    
@@ -58,7 +58,7 @@
                 </form>       
         </div>    
         <div class="pessoa">
-            <h2> Pessoas Cadastradas 2017</h2>            
+            <h2> Pessoas Cadastradas</h2>            
             <?php
                     foreach ($result as $linha){
                         echo "---------------------------------------------------------------------------- <br>";                            
