@@ -14,7 +14,6 @@
                     }
         $db->db->query($sql);
         }        
-        break;
         
         case 'GET':            
             if(isset($_GET['ex'])) {
