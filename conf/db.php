@@ -1,20 +1,44 @@
-<?php 
 
-$host = "localhost";
-$dbname = "database";
-$user = "postgres";
-$password = "123456";
-
-$connection_string = "host={$host} dbname={$dbname} user={$user} password={$password}'";
-$dbconn = pg_connect($connection_string);
-
-
-if($dbconn){
-    echo "Connected to ". pg_host($dbconn); 
-}else{
-    echo "Error in connecting to database.";
+<?php
+//db.php
+class Banco {
+    private $banco;
+    private $host;
+    private $username;
+    private $password;
+    public $db;
+    public function __construct() {
+        $this->banco = 'local';
+        $this->host = '127.0.0.1';//localhost
+        $this->username = 'postgres';
+        $this->password = 'vodka4ME';
+    }
+    public function connect(){
+        $this->db = new PDO('pgsql:dbname='.$this->banco. ';host='.$this->host, $this->username, $this->password );
+    }
+    public function setBanco($banco){
+        $this->banco = $banco;
+    }
+    public function setHost($host){
+        $this->host = $host;
+    }
+    public function setUsername($username){
+        $this->username = $username;
+    }
+    public function setPassword($password){
+        $this->password = $password;
+    }
+    public function getBanco(){
+        return $this->banco;
+    }
+    public function getHost(){
+        return $this->host;
+    }
+    public function getUsername(){
+        return $this->username;
+    }
+    public function getPassword(){
+        return $this->password;
+    }
 }
-
-echo "<br />";
-
 ?>

@@ -14,7 +14,10 @@
                     }
         $db->db->query($sql);
         }        
+<<<<<<< HEAD
         break;
+=======
+>>>>>>> parent of 14ce367... Mudança de banco de dados
         
         case 'GET':            
             if(isset($_GET['ex'])) {
@@ -38,10 +41,10 @@
 
 <html>
     <head>      
-        <title>Fazenda</title>
+        <title>Cadastro Pessoas</title>
     </head>
     <body>
-        <h1>Cadastro de Pessoas</h1>   
+        <h1>Cadastro de Pessoas</h1>    
         <div class="cadastro">    
                 <form method="POST" action="index.php">
                     <input type="hidden" id="id" name="id" value="<?= @$dados['id'] ?>">
