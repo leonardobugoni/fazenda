@@ -14,11 +14,8 @@
                     }
         $db->db->query($sql);
         }        
-<<<<<<< HEAD
         break;
-=======
->>>>>>> parent of 14ce367... Mudança de banco de dados
-        
+
         case 'GET':            
             if(isset($_GET['ex'])) {
               if ($_GET['ex'] != '') {
