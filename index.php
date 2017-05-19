@@ -6,11 +6,11 @@
         case 'POST':
              if($_POST['nome']!='' && $_POST['sobrenome']!='' && $_POST['data']!=''){
                 if($_POST['id'] != ''){
-                    $sql = "UPDATE pessoa SET nome='$_POST[nome]',sobrenome='$_POST[sobrenome]',data='$_POST[data]'
+                    $sql = "UPDATE atividade SET descricao='$_POST[descricao]'
                      WHERE id=$_POST[id]";
                     } else {
-                     $sql = "INSERT INTO pessoa (nome, sobrenome, data)
-                      VALUES ('$_POST[nome]','$_POST[sobrenome]','$_POST[data]')";
+                     $sql = "INSERT INTO atividade (descricao)
+                      VALUES ('$_POST[descricao]')";
                     }
         $db->db->query($sql);
         }        
@@ -41,22 +41,14 @@
         <title>Cadastro Pessoas</title>
     </head>
     <body>
-        <h1>Cadastro de Pessoas</h1>    
+        <h1>Atividade</h1>    
         <div class="cadastro">    
                 <form method="POST" action="index.php">
                     <input type="hidden" id="id" name="id" value="<?= @$dados['id'] ?>">
-                    <p><label for="nome">Nome</label>
-                    <input value="<?= @$dados['nome'] ?>" type="text" name="nome" required=" " id="nome" autocomplete="off"> <!--autocomplete="false"-->
+                    <p><label for="atividade"> </label>
+                    <input value="<?= @$dados['descricao'] ?>" type="text" name="descricao" required=" " id="descricao" autocomplete="off">
                 </p>
-                    <p><label for="sobrenome">Sobrenome</label>
-                        <input value="<?php echo @$dados['sobrenome'] ?>" type="text" name="sobrenome" required=" " id="sobrenome" autocomplete="off">                            
-                    </p>
-                    <p><label for="data"> Nascimentos</label>
-                        <input value="<?php echo @$dados['data'] ?>" type="date" name="data" required=" " id="data" autocomplete="off">
-                    </p>
-                    <input type="submit" value="Salvar"> 
-                    <input type="reset" value="Apagar">
-                </form>       
+                        
         </div>    
         <div class="pessoa">
             <h2> Pessoas Cadastradas</h2>            

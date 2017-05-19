@@ -1,0 +1,33 @@
+body {
+	margin: 40px;
+}
+.cabecalho{
+	background-color: gray;
+}
+.title{
+	margin-left: 20px;
+	margin-bottom: 40px;
+	font-size: 50pt;
+	position: relative;
+	float: left;
+}	
+.content{
+	margin: 20px 40px 20px 40px;
+	width: 100%
+	max-height: 100%;
+}
+
+.formulario-login{
+	position: relative;
+	float: right;
+}
+.input-login{
+	background-color: #e5e5e5;
+	color: black;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	
+}
+.login {
+	background-color: black;
+}

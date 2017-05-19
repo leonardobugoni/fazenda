@@ -8,10 +8,11 @@ class Banco {
     private $password;
     public $db;
     public function __construct() {
-        $this->banco = 'local';
-        $this->host = '127.0.0.1';//localhost
+        $this->banco = 'fazenda';
+        $this->host = 'localhost';//localhost
         $this->username = 'postgres';
-        $this->password = 'vodka4ME';
+        $this->password = '123456';
+
     }
     public function connect(){
         $this->db = new PDO('pgsql:dbname='.$this->banco. ';host='.$this->host, $this->username, $this->password );
