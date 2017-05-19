@@ -1,3 +1,40 @@
+<?php
+    require('conf/db.php');
+    $db= new Banco();
+    $db->connect();
+    switch($_SERVER['REQUEST_METHOD']) {
+        case 'POST':
+             if($_POST['nome']!='' && $_POST['sobrenome']!='' && $_POST['data']!=''){
+                if($_POST['id'] != ''){
+                    $sql = "UPDATE pessoa SET nome='$_POST[nome]',sobrenome='$_POST[sobrenome]',data='$_POST[data]'
+                     WHERE id=$_POST[id]";
+                    } else {
+                     $sql = "INSERT INTO pessoa (nome, sobrenome, data)
+                      VALUES ('$_POST[nome]','$_POST[sobrenome]','$_POST[data]')";
+                    }
+        $db->db->query($sql);
+        }        
+        break;
+        
+        case 'GET':            
+            if(isset($_GET['ex'])) {
+              if ($_GET['ex'] != '') {
+                 $sql = "DELETE FROM pessoa where id='$_GET[ex]'";
+                $db->db->query($sql);
+              }
+           } else if(isset($_GET['ed'])){
+               if ($_GET['ed'] != '') {
+                 $sql = "SELECT * FROM pessoa where id='$_GET[ed]'";
+                $dados = $db->db->prepare($sql);
+                   $dados->execute();
+                $dados = $dados->fetch();
+             }
+           }
+           break;
+    }           
+    $sql="SELECT * FROM pessoa";
+    $result = $db->db->query($sql);
+?>
 
 <html>
     <head>      
